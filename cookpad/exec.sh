@@ -1,11 +1,10 @@
 #!/bin/bash
 
 # 煮付け　カレイ　フライパン
-python crawling.py \
-    -u="https://cookpad.com/search/%E7%85%AE%E4%BB%98%E3%81%91%20%E3%82%AB%E3%83%AC%E3%82%A4%20%E3%83%95%E3%83%A9%E3%82%A4%E3%83%91%E3%83%B3?order=popularity&page=1" \
-    -o="./dataset/braised_flounder" \
-    -hu="https://cookpad.com/"
-
+# python crawling.py \
+#     -u="https://cookpad.com/search/%E7%85%AE%E4%BB%98%E3%81%91%20%E3%82%AB%E3%83%AC%E3%82%A4%20%E3%83%95%E3%83%A9%E3%82%A4%E3%83%91%E3%83%B3?order=popularity&page=1" \
+#     -o="./dataset/braised_flounder" \
+#     -hu="https://cookpad.com/"
 
 # カレー
 python crawling.py \
@@ -14,11 +13,10 @@ python crawling.py \
     -hu="https://cookpad.com/"
 
 # 煮付け
-python crawling.py \
-    -u="https://cookpad.com/search/%E7%85%AE%E4%BB%98%E3%81%91?order=popularity&page=1" \
-    -o="./dataset/simmered" \
-    -hu="https://cookpad.com/"
-
+# python crawling.py \
+#     -u="https://cookpad.com/search/%E7%85%AE%E4%BB%98%E3%81%91?order=popularity&page=1" \
+#     -o="./dataset/simmered" \
+#     -hu="https://cookpad.com/"
 
 # 生姜焼き
 python crawling.py \
@@ -31,7 +29,6 @@ python crawling.py \
     -u="https://cookpad.com/search/%E4%BD%9C%E3%82%8A%E7%BD%AE%E3%81%8D?order=popularity&page=1" \
     -o="./dataset/meal_prep" \
     -hu="https://cookpad.com/"
-
 
 # 肉じゃが
 python crawling.py \

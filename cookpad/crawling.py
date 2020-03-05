@@ -1,3 +1,5 @@
+from logging import getLogger, StreamHandler, DEBUG, Formatter
+from logging.handlers import TimedRotatingFileHandler
 import argparse
 import datetime
 import os
@@ -54,8 +56,17 @@ def crawling(args):
             break
 
         url = urllib.parse.urljoin(HOME_URL, next_url.attrs["href"])
-        response = requests.get(url)
-        time.sleep(1)
+
+        # 取得できるまで繰り返し
+        for _i in range(1000):
+            try:
+                response = requests.get(url)
+                time.sleep(1)
+                break
+            except Exception as e:
+                print(e)
+                time.sleep(10)
+
         with open(os.path.join(OUT_DIR, f"page{page_count:000006}.html"), "w", encoding="utf-8") as f:
             f.write(response.text)
 
@@ -66,11 +77,38 @@ def crawling(args):
 
 def main():
     args = get_args()
+    print(args)
     os.makedirs(args.out_dir, exist_ok=True)
     crawling(args)
 
 
 if __name__ == "__main__":
+    logger = getLogger(None)
+
+    fmt_text = (
+        "%(asctime)s %(name)s %(lineno)d"
+        " [%(levelname)s][%(funcName)s] %(message)s"
+    )
+    log_fmt = Formatter(fmt_text)
+
+    handler = StreamHandler()
+    handler.setLevel("INFO")
+    handler.setFormatter(log_fmt)
+    logger.setLevel("INFO")
+    logger.addHandler(handler)
+
+    logdir, logfile = os.path.split(os.path.abspath(__file__))
+    logpath = logfile + ".log"
+    handler = TimedRotatingFileHandler(
+        filename=logpath,
+        when="D",
+        backupCount=7
+    )
+    handler.setLevel(DEBUG)
+    handler.setFormatter(log_fmt)
+    logger.setLevel(DEBUG)
+    logger.addHandler(handler)
+
     date_now = datetime.datetime.now()
     print(f"クローリング開始: {date_now}")
     main()
