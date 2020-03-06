@@ -7,10 +7,10 @@
 #     -hu="https://cookpad.com/"
 
 # カレー
-python crawling.py \
-    -u="https://cookpad.com//search/%E3%82%AB%E3%83%AC%E3%83%BC?order=popularity&amp;page=1" \
-    -o="./dataset/carry" \
-    -hu="https://cookpad.com/"
+# python crawling.py \
+#     -u="https://cookpad.com//search/%E3%82%AB%E3%83%AC%E3%83%BC?order=popularity&amp;page=1" \
+#      -o="./dataset/carry" \
+#     -hu="https://cookpad.com/"
 
 # 煮付け
 # python crawling.py \
@@ -19,16 +19,16 @@ python crawling.py \
 #     -hu="https://cookpad.com/"
 
 # 生姜焼き
-python crawling.py \
-    -u="https://cookpad.com/search/%E7%94%9F%E5%A7%9C%E7%84%BC%E3%81%8D?order=popularity&page=1" \
-    -o="./dataset/ginger_pork" \
-    -hu="https://cookpad.com/"
+# python crawling.py \
+#     -u="https://cookpad.com/search/%E7%94%9F%E5%A7%9C%E7%84%BC%E3%81%8D?order=popularity&page=1" \
+#     -o="./dataset/ginger_pork" \
+#     -hu="https://cookpad.com/"
 
 # 作り置き
-python crawling.py \
-    -u="https://cookpad.com/search/%E4%BD%9C%E3%82%8A%E7%BD%AE%E3%81%8D?order=popularity&page=1" \
-    -o="./dataset/meal_prep" \
-    -hu="https://cookpad.com/"
+# python crawling.py \
+#     -u="https://cookpad.com/search/%E4%BD%9C%E3%82%8A%E7%BD%AE%E3%81%8D?order=popularity&page=1" \
+#     -o="./dataset/meal_prep" \
+#     -hu="https://cookpad.com/"
 
 # 肉じゃが
 python crawling.py \
