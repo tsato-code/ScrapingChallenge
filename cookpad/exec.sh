@@ -31,10 +31,10 @@
 #     -hu="https://cookpad.com/"
 
 # 肉じゃが
-python crawling.py \
-    -u="https://cookpad.com/search/%E8%82%89%E3%81%98%E3%82%83%E3%81%8C?order=popularity&page=1" \
-    -o="./dataset/meet_and_potatoes" \
-    -hu="https://cookpad.com/"
+# python crawling.py \
+#     -u="https://cookpad.com/search/%E8%82%89%E3%81%98%E3%82%83%E3%81%8C?order=popularity&page=1" \
+#     -o="./dataset/meet_and_potatoes" \
+#     -hu="https://cookpad.com/"
 
 # 鍋
 python crawling.py \
